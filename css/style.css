@@ -175,7 +175,7 @@ a{
 a:hover{
   text-decoration:none;
   outline:none;
-  color: #f2be00;
+  color: #0267b1;
 }
 
 input,button,select,textarea{
@@ -9520,7 +9520,7 @@ body.flyout-searchbar-active .wraper_flyout_search > .table > .table-cell .flyou
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: #fc9a36;
+  color: #0267b1;
   margin-bottom: 10px;
 }
 
@@ -10247,7 +10247,7 @@ body.flyout-searchbar-active .wraper_flyout_search > .table > .table-cell .flyou
 .testimonial-style-five{
   position: relative;
   background: #fff;
-  padding: 183px 0px 50px 0px;
+  padding: 50px 0px;
 }
 
 .testimonial-style-five .sec-title .top-text{
@@ -10276,7 +10276,7 @@ body.flyout-searchbar-active .wraper_flyout_search > .table > .table-cell .flyou
   position: relative;
   display: block;
   background: #fff;
-  padding: 0px 30px 40px 30px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }

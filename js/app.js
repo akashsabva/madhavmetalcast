@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll) {
+app.controller('myCtrl', ['$scope', '$location', '$anchorScroll', '$http', function($scope, $location, $anchorScroll, $http) {
     //$scope.firstName= "John";
     //$scope.lastName= "Doe";
     $scope.headerOptionList = ['Home', 'About Us', 'Our Products', 'Facilities', 'Quality Assurance', 'Contact Us'];
@@ -36,6 +36,12 @@ app.controller('myCtrl', ['$scope', '$location', '$anchorScroll', function($scop
         'Mechanical Test : NABL Approved laboratory test certiﬁcate will be provided if required.',
         'Heat Treatment : 7 Feet x 7 Feet x 5 Feet in house furnace.',
         'Shot Blasting Machine : 6 Feet x 6 Feet x 5 Feet – double door shot blast machine in House.'
+    ];
+    $scope.homeSliderList = [
+        {"h1Text":"Metal Cast Solution", "h1BelowText":"Implement your innovation with advanced Manufacturing Technology", "bgImagePath":"MADHAV/Home_Slider/Home_1.jpg"},
+        {"h1Text":"Metal Cast Solution", "h1BelowText":"Implement your innovation with advanced Manufacturing Technology", "bgImagePath":"MADHAV/Home_Slider/Home_2.jpg"},
+        {"h1Text":"Metal Cast Solution", "h1BelowText":"Implement your innovation with advanced Manufacturing Technology", "bgImagePath":"MADHAV/Home_Slider/Home_3.jpg"},
+        {"h1Text":"Metal Cast Solution", "h1BelowText":"Implement your innovation with advanced Manufacturing Technology", "bgImagePath":"MADHAV/Home_Slider/Home_4.jpg"}
     ];
     
     $scope.onClickHeader = function(currentOption) {
@@ -96,6 +102,13 @@ app.controller('myCtrl', ['$scope', '$location', '$anchorScroll', function($scop
         $anchorScroll();
         $location.hash('');
         $location.replace();
+	}
+
+    $scope.insertdata = function() {
+    	$http.post("insert.php", {'name':$scope.USERNAME, 'email':$scope.EMAIL, 'mobileNo':$scope.MOBILE_NO, 'subject':$scope.SUBJECT, 'message':$scope.MESSAGE}).then(function () {
+            //alert("Successfully submitted");
+            $('#alertPopup').modal('show');
+        });
 	}
 
     $scope.gotoSpecificSection('tbjProductOverview');
